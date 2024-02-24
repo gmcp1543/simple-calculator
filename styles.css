@@ -5,11 +5,13 @@
 body {
     width: 100%;
     height: 100vh;
-    display: flex;
-    align-items: center;
+    display: grid;
     justify-content: center;
+    align-content: center;
     margin: 0;
     background-color: #2b2b2b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: whitesmoke;
 }
 
 #calculator-container {
@@ -17,16 +19,26 @@ body {
     height: 600px;
     background-color: #303030;
     border-radius: 5px;
+    box-shadow: 0 0 50px #3787b6;
+    transition: ease box-shadow .5s
+}
+
+#calculator-container:hover {
+    box-shadow: 0 0 50px 15px #3787b6;
 }
 
 #displayer-container {
     width: 100%;
     height: 27%;
+    text-align: end;
+    padding: 5px 0;
 }
 
 #remainder {
     width: 100%;
     height: 30%;
+    font-size: 1.3rem;
+    padding: 0 2px;
 }
 
 #displayer {
@@ -41,5 +53,62 @@ body {
     border: none;
     outline: none;
     font-size: 3.5rem;
-    text-align: end;
+    padding: 0 2px;
 }
+
+#buttons-container {
+    width: 100%;
+    height: 73%;
+    display: grid;
+    gap: 2px;
+    grid-template-areas:
+    'percentSign eraseEverythingAction eraseAction divideSign'
+    'numberSeven numberEight numberNine multiplySign'
+    'numberFour numberFive numberSix minusSign'
+    'numberOne numberTwo numberThree plusSign'
+    'assignmentSign numberZero dotSign equalSign'
+    ;
+    padding: 2px;
+}
+
+#buttons-container button {
+    background-color: #2b2b2b;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.7rem;
+    color: whitesmoke;
+    transition: ease background-color .2s;
+}
+
+#buttons-container button:hover {
+    background-color: #474747;
+}
+
+#buttons-container button.operator {
+    color: #3787b6 !important;
+}
+
+#numberZero {grid-area: numberZero;}
+#numberOne {grid-area: numberOne;}
+#numberTwo {grid-area: numberTwo;}
+#numberThree {grid-area: numberThree;}
+#numberFour {grid-area: numberFour;}
+#numberFive {grid-area: numberFive;}
+#numberSix {grid-area: numberSix;}
+#numberSeven {grid-area: numberSeven;}
+#numberEight {grid-area: numberEight;}
+#numberNine {grid-area: numberNine;}
+#plusSign {grid-area: plusSign;}
+#minusSign {grid-area: minusSign;}
+#multiplySign {grid-area: multiplySign;}
+#divideSign {grid-area: divideSign;}
+#dotSign {grid-area: dotSign;}
+#equalSign {
+    grid-area: equalSign;
+    background-color: #3787b6 !important;
+}
+#assignmentSign {grid-area: assignmentSign;}
+#eraseAction {grid-area: eraseAction;}
+#eraseEverythingAction {grid-area: eraseEverythingAction;}
+#percentSign {grid-area: percentSign;}
+
